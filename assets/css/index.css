@@ -1,0 +1,24 @@
+h1.site-title, .subtitle {
+    font-family: 'Julius Sans One', sans-serif;
+    position: relative;
+    text-align: center;
+    margin-top: 0;
+}
+
+.subtitle {
+    font-size: 40px;
+}
+
+h1.site-title {
+    font-size: 116px;
+}
+
+.newpost {
+    background-color:lavender;
+    border-color: black;
+    border-width:0.25px;
+    border-style: solid;
+}
+.text-center a {
+    color:blue;
+}

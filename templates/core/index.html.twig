@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} sludify {% endblock %}
+{% block body %}
+
+<link rel="stylesheet" href="{{ asset('build/index.css') }}">
+<div class="main container">
+    <h1 class="site-title hidden-xs">Sludify </h1>
+    <div class="subtitle"> Newest posts </div>
+</div> <!-- .container -->
+
+<div class="main container">
+    <div class="row">
+    <!-- Lists 8 posts sorted by newest -->
+    {% for post in newest_posts %}
+    <div class="col-md-6 newpost" style="margin-bottom:30px">
+        <div class="bg-title" style="padding:10px 10px 5px 10px">
+            <div class="media">
+              <div class="media-body">
+                  <h4 class="media-heading" style="white-space:nowrap">{{ post.title }}</h4>
+                  <div class="small">
+                    by
+                    <span class="username"> {{ post.author.username }}</span>
+                    &middot;
+                    <time datetime="{{ post.datePosted|date('c') }}">{{ post.datePosted|date('M d, Y') }}</time>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div style="padding: 10px 20px 20px 20px">
+            <div class="text-center small"> <a href="{{path('post_show', {'id': post.id}) }}">Read more</a> </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Post{% endblock %}
+
+{% block body %}
+    <h1>Post</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ post.title }}</td>
+            </tr>
+            <tr>
+                <th>Post</th>
+                <td>{{ post.post }}</td>
+            </tr>
+            <tr>
+                <th>DatePosted</th>
+                <td>{{ post.datePosted ? post.datePosted|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('post_index') }}">back to list</a>
+
+{% endblock %}
